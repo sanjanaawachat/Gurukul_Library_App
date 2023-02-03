@@ -1,19 +1,13 @@
 import Table from 'react-bootstrap/Table';
-//import { Bookdata } from '../Pages/Home';
 import React from 'react';
 
-//  const data = useContext(Bookdata);
-//   console.log(data);
-
-   function BasicExample({data}) {
+function BasicExample({data}) {
     function deleteRow(r){
       const rowindex= r.target.parentNode.parentNode.rowIndex;
-      // console.log(rowindex-1);
       const tbody= document.getElementsByTagName('tbody')[0];
       tbody.deleteRow(rowindex-1);
       let bookdata=data;
-      bookdata.splice(rowindex-1,1)
-      // console.log(bookdata)
+      bookdata.splice(rowindex-1,1);
       localStorage.setItem('data', JSON.stringify(bookdata))
     }
     return (
@@ -31,7 +25,6 @@ import React from 'react';
           {
             data.map((val, i) => {
               return (
-                // <tr>
                 <tr key={i}>
                   <td>{i + 1}</td>
                   <td>{val.bookname}</td>
@@ -39,7 +32,6 @@ import React from 'react';
                   <td>{val.type}</td>
                   <td className='h5 text-center'><i className='fa-solid fa-trash-can'onClick={(e)=>{deleteRow(e)}}></i></td>
                 </tr>
-                // </tr>
               )
             })
           }

@@ -1,55 +1,27 @@
-//   import React, { useState, useRef } from 'react';
 import React, { useState, useRef} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Lottie from 'react-lottie';
-// import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import BasicExample from '../Components/Table'
 import library_lottie from '../Assets/99349-girl-with-books.json'
-// export const Bookdata = createContext();
 const Home = () => {
-    //  let bookname = useRef("");
     if(JSON.parse(localStorage.getItem('data'))==null ) {
-         //check if data exists
         console.log('kuch nahi')
         localStorage.setItem('data', JSON.stringify([]))
     } else {
-         //if not put atleast [] empty array
          console.log('kuch hain');
     }
-    //const bookname = useRef("");
-     //const author = useRef("");
-     //let type = useRef("Coding");
-
-    // const [bookname,setBookname] = useState("");
-    // const [author, setAuthor]=useState("");
-    // const [type, settype]=useState("coding");
-     const bookname = useRef("");
+    const bookname = useRef("");
     const author = useRef("");
     const coding = useRef("Coding");
     const cooking = useRef("Cooking");
     const adventure = useRef("Adventure");
-    const [bookdata, setBookdata] = useState(JSON.parse(localStorage.getItem('data'))); //adding data from localstorage here
+    const [bookdata, setBookdata] = useState(JSON.parse(localStorage.getItem('data'))); 
     let type = ""
 
 
     console.log('problem 1')
-
-
-
     const [data, setData] = useState({});
-
-
-    // localStorage.setItem("data", JSON.stringify([{ name: "saikat" }, { name: "karan" }]));
-    // // Object -- > JSON
-    // console.log(JSON.parse(localStorage.getItem("data")))
-    // // JSON -->Object
-
-
-    // const [bookname,setBookname] = useState("");
-    // const [author, setAuthor]=useState("");
-    // const [type, settype]=useState("coding");
-
     const formsubmit = (e) => {
 
         if (cooking.current.checked) {
@@ -65,12 +37,6 @@ const Home = () => {
         e.preventDefault();
         
         if (bookname.current.value.length > 2 && author.current.value.length > 2) {
-            // setData({
-            //     bookname: bookname.current.value,
-            //     author: author.current.value,
-            //     type: type
-            // })
-    // localStorage.setItem("data", JSON.stringify([...(JSON.parse(localStorage.getItem("data"))), { data }]))
             setBookdata([...bookdata, {
                 bookname: bookname.current.value,
                 author: author.current.value,
@@ -87,9 +53,7 @@ const Home = () => {
         }
         e.target.reset();
     }
-    //const databook = JSON.parse(localStorage.getItem("data"));
-
-
+   
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -101,9 +65,8 @@ const Home = () => {
 
     return (
         <>
-            {/* <Bookdata.Provider value={data}> */}
                 <div className='container'>
-                    <h2 className='text-center text-secondary'> PrepBytes Library </h2>
+                    <h2 className='text-center text-secondary'> GuruKul Library 📖🤷‍♀️🎉</h2>
                     <hr />
 
                     <div className='w-100 formshere '>
@@ -120,11 +83,7 @@ const Home = () => {
                                 <Form.Control type="text" placeholder="J. K. Rowling" ref={author} />
                             </Form.Group>
 
-                            {/* <ButtonGroup aria-label="Basic example">
-                            <Button variant="dark" ref={type} >Coding</Button>
-                            <Button variant="dark" ref={type}>Cooking</Button>
-                            <Button variant="dark" ref={type}>Adventure</Button>
-                        </ButtonGroup> */}
+                        
                             <div className="btn-group">
                                 <input type="radio" className="btn-check" name="options" id="option1" autoComplete="off" ref={cooking} />
                                 <label className="btn btn-secondary" htmlFor="option1">Cooking</label>
@@ -149,16 +108,9 @@ const Home = () => {
                             width={400}
                         />
                     </div>
-
-
-                     
-                {/* <BasicExample data={databook}/>  */}
                     <BasicExample data={bookdata}/>
 
                 </div>
-
-
-            {/* </Bookdata.Provider> */}
         </>
     )
 }
