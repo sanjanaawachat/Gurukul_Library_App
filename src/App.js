@@ -4,7 +4,7 @@ import NavScrollExample from './Components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/Home';
 import './index.css';
-import Lottie from 'react-lottie';
+// import Lottie from 'react-lottie';
 function App() {
   return (
     <>

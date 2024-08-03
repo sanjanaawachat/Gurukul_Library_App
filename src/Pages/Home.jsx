@@ -21,7 +21,7 @@ const Home = () => {
 
 
     console.log('problem 1')
-    const [data, setData] = useState({});
+    // const [data, setData] = useState({});
     const formsubmit = (e) => {
 
         if (cooking.current.checked) {
