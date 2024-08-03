@@ -9,8 +9,9 @@ import Navbar from 'react-bootstrap/Navbar';
 function NavScrollExample() {
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container fluid>
+    <div>
+         <Navbar bg="dark" variant="dark" expand="lg" style={{width:"1800px",position:"fixed",marginTop:"0"}} >
+      <Container fluid >
         <Navbar.Brand href="#" className="text-warning">Library 📕</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -34,6 +35,8 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
+ 
   );
 }
 

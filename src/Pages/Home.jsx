@@ -65,8 +65,8 @@ const Home = () => {
 
     return (
         <>
-                <div className='container'>
-                    <h2 className='text-center text-secondary'> GuruKul Library 📖🤷‍♀️🎉</h2>
+                <div className='container' style={{padding:"64px"}}>
+                    <h2 className='text-center text-secondary '> GuruKul Library 📖🤷‍♀️🎉</h2>
                     <hr />
 
                     <div className='w-100 formshere '>
